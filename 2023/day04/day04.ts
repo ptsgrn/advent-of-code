@@ -10,9 +10,3 @@ for (let c of text.split('\n')) {
 }
 
 console.log("Part 1:", sum)
-
-sum = 0
-
-
-
-console.log("Part 2:", sum)

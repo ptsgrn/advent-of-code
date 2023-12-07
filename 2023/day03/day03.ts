@@ -1,7 +1,8 @@
 import input from './input-test.txt'
+console.log("# [AoC 2023/Day 03]")
+
 let sum = 0
 const rows = input.split("\n").map(a => a + ".")
-console.log("----")
 
 for (let r = 0; r < rows.length; r++) {
   let num = ""
@@ -25,5 +26,17 @@ for (let r = 0; r < rows.length; r++) {
   }
 }
 
-console.log("2023 Day 03")
 console.log("Part 1:", sum)
+
+sum = 0
+
+for (let r = 0; r < rows.length; r++) {
+  let num = ""
+  for (let c = 0; c < rows[r].length; c++) {
+    const neighbors = [
+      
+    ]
+  }
+}
+
+console.log("Part 2:", sum)
