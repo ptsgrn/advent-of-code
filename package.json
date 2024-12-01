@@ -5,7 +5,14 @@
   "devDependencies": {
     "bun-types": "latest"
   },
+  "scripts": {
+    "solve": "bun --watch ./scripts/solve.ts"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "dedent": "^1.5.3"
   }
 }

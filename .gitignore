@@ -175,6 +175,6 @@ dist
 .DS_Store
 
 # AoC Input and Output
-input.txt
-input-test.txt
+input*.txt
+input-test*.txt
 output.txt
