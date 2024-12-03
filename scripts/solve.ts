@@ -52,8 +52,8 @@ if (isTest) {
 }
 
 const { partOne, partTwo, parse } = await import(`@/${year}/${name}/day${name}.ts`)
-const [one, onePerformance] = withPerformance(() => partOne?.(parse(input)))
-const [two, twoPerformance] = withPerformance(() => partTwo?.(parse(input)))
+const [one, onePerformance] = withPerformance(() => partOne?.(parse(input.trim())))
+const [two, twoPerformance] = withPerformance(() => partTwo?.(parse(input.trim())))
 
 console.log(
   '🌲',
