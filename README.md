@@ -17,7 +17,7 @@ bun solve
 
 And for using an example challenge info:
 ```bash
-bun solve --example
+bun solve --test
 ```
 
 This will create files in current year/day automatically with the following structure:
