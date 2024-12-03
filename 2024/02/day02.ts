@@ -19,7 +19,7 @@ export function partOne(input: ReturnType<typeof parse>) {
       .filter(v => v !== null)
     )
     // if consecutive,
-    // sum of list of absolute values is equal to absolute value of sum of list
+    // sum of list of absolute diff values is equal to absolute value of sum of list of their diff values
     .filter(l => abs(sum(l)) === abs(absSum(l)))
     .filter(l => l.every(v => v !== 0 && abs(v) <= 3))
     .length
