@@ -25,6 +25,7 @@ export function partOne(input: ReturnType<typeof parse>) {
   const rowCount = input.length;
   const colCount = input[0].length;
   const word = "XMAS"
+
   for (let y = 0; y < rowCount; y++) {
     for (let x = 0; x < colCount; x++) {
       for (const dir of directions) {
@@ -32,27 +33,14 @@ export function partOne(input: ReturnType<typeof parse>) {
         let nx = x + dir[0]
         let ny = y + dir[1]
         let wordIndex = 1;
-        console.log(`\n[new] start X at (${x},${y}) [${dirToArrow(dir)}]`)
         while (nx >= 0 && nx < colCount && ny >= 0 && ny < rowCount) {
-          if (input[ny][nx] !== word[wordIndex]) {
-            console.log(`  heh, (${nx},${ny}) not match got ${input[ny][nx]} but should be ${word[wordIndex]}`)
-            break
-          }
-          console.log(`  found ${input[ny][nx]}! at (${nx},${ny}) [${dirToArrow(dir)}]`)
+          if (input[ny][nx] !== word[wordIndex]) break
           nx += dir[0]
           ny += dir[1]
           wordIndex += 1
         }
-        if (wordIndex === word.length) {
-          count++
-          console.table({
-            start: [x, y],
-            end: [nx, ny],
-            dir: dirToArrow(dir)
-          })
-        }
+        if (wordIndex === word.length) count++
       }
-      console.log("=====================================")
     }
   }
   return count
