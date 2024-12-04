@@ -24,26 +24,24 @@ export function partOne(input: ReturnType<typeof parse>) {
   let count = 0;
   const rowCount = input.length;
   const colCount = input[0].length;
-  const word = "XMAS"
+  const word = "XMAS";
+  const wordLength = word.length;
 
   for (let y = 0; y < rowCount; y++) {
     for (let x = 0; x < colCount; x++) {
+      if (input[y][x] !== word[0]) continue;
       for (const dir of directions) {
-        if (input[y][x] !== word[0]) continue
-        let nx = x + dir[0]
-        let ny = y + dir[1]
-        let wordIndex = 1;
-        while (nx >= 0 && nx < colCount && ny >= 0 && ny < rowCount) {
-          if (input[ny][nx] !== word[wordIndex]) break
-          nx += dir[0]
-          ny += dir[1]
-          wordIndex += 1
+        let nx = x, ny = y, wordIndex = 0;
+        while (wordIndex < wordLength && isValidCoord(nx, ny, colCount, rowCount) && input[ny][nx] === word[wordIndex]) {
+          nx += dir[0];
+          ny += dir[1];
+          wordIndex++;
         }
-        if (wordIndex === word.length) count++
+        if (wordIndex === wordLength) count++;
       }
     }
   }
-  return count
+  return count;
 }
 
 export function partTwo(input: ReturnType<typeof parse>) {
